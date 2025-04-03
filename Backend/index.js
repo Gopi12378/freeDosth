@@ -1,6 +1,8 @@
 import express from "express";
 const app=express()
-require("dotenv").config()
+import dotenv from "dotenv";
+dotenv.config();
+
 const port=process.env.PORT
 const connect=require("./config/db")
 const authRoutes=require("./routes/auth")

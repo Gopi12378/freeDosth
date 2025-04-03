@@ -1,0 +1,7 @@
+.home-page {
+    background-image: url('https://plus.unsplash.com/premium_photo-1667113478917-475119cbbca7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFja2dyb3VuZCUyMGltYWdlcyUyMGdyYWRpYWludCUyMGNvbG9yc3xlbnwwfHwwfHx8MA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}

@@ -1,7 +1,7 @@
-import express from "express";
+const express=require("express")
 const app=express()
-import dotenv from "dotenv";
-dotenv.config();
+
+require("dotenv").config();
 
 const port=process.env.PORT
 const connect=require("./config/db")

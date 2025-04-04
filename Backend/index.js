@@ -16,4 +16,8 @@ app.use("/api/auth",authRoutes);
 app.use("/api/adminauth",adminRoutes)
 app.use("/api/course",courseRoutes)
 connect()
+app.get('/', (req, res) => {
+  res.send('Backend is running...');
+});
+
 app.listen(port,()=>console.log("Server is running on Port no:",port))

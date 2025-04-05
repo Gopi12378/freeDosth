@@ -19,7 +19,7 @@ export default function Login() {
     function handelSubmit(e) {
         e.preventDefault();
 
-        axios.post("http://localhost:4000/api/auth/login", info)
+        axios.post("https://freedosth1.onrender.com/api/auth/login", info)
             .then((res) => {
                 if (res.status === 200) {
                     const userData = { token: res.data.token, role: res.data.role };

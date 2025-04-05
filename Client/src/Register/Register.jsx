@@ -17,7 +17,7 @@ export default function Register() {
     async function handelSubmit(e) {
        e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:4000/api/auth/signup", formData);
+            const res = await axios.post("https://freedosth1.onrender.com/api/auth/signup", formData);
             console.log("User created successfully");
             console.log(res.data.r);
             localStorage.setItem("token", res.data.token);

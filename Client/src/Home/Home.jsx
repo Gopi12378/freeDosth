@@ -18,7 +18,7 @@ export default function Home() {
 
     async function fetchCourses() {
         try {
-            const res = await axios.get("http://localhost:4000/api/course/");
+            const res = await axios.get("https://freedosth1.onrender.com/api/course/");
             setCourses(res.data);
         } catch (err) {
             console.error("Error fetching courses:", err);

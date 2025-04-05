@@ -40,7 +40,7 @@ export default function Home() {
     function handelDelete(e){
            try{
             console.log(user.user.token)
-            axios.delete(`http://localhost:4000/api/course/${e}`,  {
+            axios.delete(`https://freedosth1.onrender.com/api/course/${e}`,  {
                 headers: { Authorization: user.user.token }
             })
             .then((res)=>{

@@ -17,7 +17,7 @@ export default function AddCourse() {
             e.preventDefault()
             
             console.log(formData);
-            axios.post("http://localhost:4000/api/course/add", formData, {
+            axios.post("https://freedosth1.onrender.com/api/course/add", formData, {
                 headers: { Authorization: user.token }
             })
             .then((res)=>{

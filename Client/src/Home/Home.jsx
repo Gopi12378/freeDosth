@@ -57,7 +57,7 @@ export default function Home() {
 
     return (
         <div className="container">
-            <h1 className="text-center my-4">Welcome to feerDosth</h1>
+            <h1 className="text-center my-4">Welcome to freeDosth</h1>
 
             <div className="input-group mb-4 w-50 mx-auto">
                 <input

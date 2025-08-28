@@ -11,7 +11,7 @@ router.post("/add",authMiddleware,verifyAdmin ,async (req,res)=>{
         if(!coursename || !price || !mentorname || !nooflectures || !imageUrl){
             return res.status(401).json({message:"all fields are required"})
         }
-        const newCourse= Course.create({coursename,price,mentorname,nooflectures,imageUrl})
+        const newCourse= await Course.create({coursename,price,mentorname,nooflectures,imageUrl})
        
        console.log(newCourse)
        res.status(201).json({message:"course added successfuly"})

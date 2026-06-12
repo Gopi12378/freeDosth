@@ -5,32 +5,47 @@ const bcrypt=require("bcryptjs")
 const {generateToken}=require("../config/jwt")
 
 
-router.post("/signup",async (req,res)=>{
-    try{
-   
-    const {username,email,password,mobile,role}=req.body
-    
-    let user=await User.findOne({email})
-    if(user) return res.status(400).json({message:"User already exist"})
-    const hashPassword=await bcrypt.hash(password,10);
-    const newUser= new User({
-        username,
-        email,
-        password:hashPassword,
-        mobile,
-        role:role||"user"
-    })
-    await newUser.save();
-    const token=generateToken(newUser._id);
-    console.log(newUser);
-    const r=newUser.role;
-    res.status(201).json({message:"User register succsefuly",token,r})
-}
-catch(err){
-    console.log(err)
-    res.status(500).json({message:"Server error",err})
-}
-})
+router.post("/signup", async (req, res) => {
+    try {
+        const { username, email, password, mobile, role } = req.body;
+
+        let user = await User.findOne({ email });
+
+        if (user) {
+            return res.status(400).json({
+                message: "User already exists"
+            });
+        }
+
+        const hashPassword = await bcrypt.hash(password, 10);
+
+        const newUser = new User({
+            username,
+            email,
+            password: hashPassword,
+            mobile,
+            role: role || "user"
+        });
+
+        // Save to MongoDB
+        await newUser.save();
+        const users = await User.find();
+        console.log(users);
+        const token = generateToken(newUser._id);
+
+        res.status(201).json({
+            message: "User registered successfully",
+            token,
+            r: newUser.role
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            message: "Server error"
+        });
+    }
+});
 
 router.post("/login",async (req,res)=>{
     try{

@@ -20,6 +20,7 @@ export default function Register() {
             const res = await axios.post("https://freedosth1.onrender.com/api/auth/signup", formData);
             console.log("User created successfully");
             console.log(res.data.r);
+            console.log(res.data.username,res.data.email);
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("role", res.data.r);
             setUser({ token: res.data.token, role: res.data.r });

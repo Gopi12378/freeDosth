@@ -20,7 +20,7 @@ router.post("/signup",async (req,res)=>{
         mobile,
         role:role||"user"
     })
-    
+    await newUser.save();
     const token=generateToken(newUser._id);
     console.log(newUser);
     const r=newUser.role;
